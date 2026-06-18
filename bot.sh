@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 set -euo pipefail
-USERNAME=$(users | awk '{print $1}')
 
 curl -fsSL https://download.docker.com/linux/debian/gpg \
  | gpg --dearmor -o /usr/share/keyrings/docker.gpg
