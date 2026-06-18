@@ -13,7 +13,7 @@ $(. /etc/os-release && echo "$VERSION_CODENAME") stable" \
 
 sed -i '/^deb cdrom:/s/^/#/' /etc/apt/sources.list
 
-apt-get update && apt-get install -y 
+apt-get update && apt-get install -y \
 sudo \
 openssh-server \
 xfce4 \
