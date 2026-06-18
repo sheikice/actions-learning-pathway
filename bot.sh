@@ -28,6 +28,9 @@ make \
 vim \
 ca-certificates
 
+sed -i '/^#X11UseLocalhost yes/s/^#//' /etc/ssh/sshd_config
+systemctl restart ssh
+
 usermod -aG sudo,docker "${USERNAME}" && systemctl enable ssh docker lightdm
 
 git clone https://github.com/sheikice/inception.git "/home/${USERNAME}/inception"
