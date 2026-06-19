@@ -12,7 +12,7 @@ $(. /etc/os-release && echo "$VERSION_CODENAME") stable" \
 
 sed -i '/^deb cdrom:/s/^/#/' /etc/apt/sources.list
 
-apt-get update && apt-get install -y \
+apt-get clean && apt-get update && apt-get install -y \
 sudo \
 openssh-server \
 firefox-esr \
@@ -30,5 +30,3 @@ sed -i '/^#X11UseLocalhost yes/s/^#//' /etc/ssh/sshd_config
 systemctl restart ssh
 sed -i "s/localhost/localhost ${USERNAME}.42.fr" /etc/hosts
 usermod -aG sudo,docker "${USERNAME}" && systemctl enable ssh docker
-
-git clone https://github.com/sheikice/inception.git "/home/${USERNAME}/inception"
