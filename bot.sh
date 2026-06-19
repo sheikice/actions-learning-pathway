@@ -28,5 +28,5 @@ ca-certificates
 
 sed -i '/^#X11UseLocalhost yes/s/^#//' /etc/ssh/sshd_config
 systemctl restart ssh
-sed -i "s/localhost/localhost ${USERNAME}.42.fr" /etc/hosts
+sed -i "s/localhost/localhost ${USERNAME}.42.fr/" /etc/hosts
 usermod -aG sudo,docker "${USERNAME}" && systemctl enable ssh docker
